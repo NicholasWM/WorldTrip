@@ -15,7 +15,7 @@ export function Header({showReturnButton = false}: HeaderProps){
 
     return (
         <Flex 
-            w="80vw"
+            w={["90vw","80vw"]}
             align="center"
             justifyContent={showReturnButton ? "space-between" : 'center'}
             padding={["4", "7"]}
@@ -28,6 +28,8 @@ export function Header({showReturnButton = false}: HeaderProps){
                 />
             )}
             <Image
+                w={["81px", "184px"]}
+                h={["20px", "45.92"]}
                 objectFit="fill"
                 src='./images/logo.svg'
                 alt="Segun Adebayo"

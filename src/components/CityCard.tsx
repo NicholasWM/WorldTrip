@@ -1,17 +1,9 @@
-import Head from 'next/head'
 import {
     Image,
     Avatar,
-    Icon,
     Text,
-    Stack,
-    HStack,
-    Wrap,
-    WrapItem,
     Box,
     Flex,
-    Center,
-
 } from '@chakra-ui/react'
 
 interface CityCardProps {

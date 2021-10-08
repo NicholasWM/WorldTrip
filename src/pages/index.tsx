@@ -4,23 +4,23 @@ import { Header } from '../components/Header'
 import {
   Image,
   Flex,
-  Icon,
   Box,
-  HStack,
   Text,
-  SimpleGrid,
   useBreakpointValue,
+  Icon,
   Divider,
+  Wrap
 } from '@chakra-ui/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ItemList } from '../components/ItemList'
+import { SliderItem } from '../components/SliderItem';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { SliderItem } from '../components/SliderItem';
+import { IoIosInformationCircleOutline } from 'react-icons/io';
 const Home: NextPage = () => {
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -80,27 +80,33 @@ const Home: NextPage = () => {
         )}
       </Flex>
 
-
-      <Flex mx="140px" my={['90px']}  width="80%" flexDir="row" justifyContent="space-between">
+      <Wrap 
+        spacing={["32px"]}
+        mx={["50px", "140x"]}
+        my={["36px", '90px']} 
+        width={["90%","80%"]}
+        justify="space-around"
+      >
         <ItemList src="./images/cocktail.svg" label="vida noturna"/>
         <ItemList src="./images/surf.svg" label="praia"/>
         <ItemList src="./images/building.svg" label="moderno"/>
         <ItemList src="./images/museum.svg" label="clássico"/>
         <ItemList src="./images/earth.svg" label="e mais ..."/>
-      </Flex>
+      </Wrap>
 
       <Divider w={['90px']} orientation="horizontal" />
-      <Box my={["52px"]}>
+      <Box 
+        fontSize={["20px", "36px"]}
+        my={["24px", "52px"]}
+      >
         <Text
           textAlign="center"
-          fontSize={["36px"]}
           fontWeight={["500"]}
         >
           Vamos nessa?
         </Text>
         <Text
           textAlign="center"
-          fontSize={["36px"]}
           fontWeight={["500"]}
         >
           Então escolha o seu continente
@@ -108,7 +114,6 @@ const Home: NextPage = () => {
       </Box>
       <Box
         w={["100vw"]}
-        h={["450px"]}
         maxH={["450px"]}
         maxW="1440px"
         mb={["24px", "64px"]}

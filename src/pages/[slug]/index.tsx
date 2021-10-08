@@ -1,17 +1,11 @@
 import Head from 'next/head'
 import {
-    Image,
-    Avatar,
-    Icon,
     Text,
-    Stack,
     HStack,
     Wrap,
     WrapItem,
     Box,
-    Flex,
     Center,
-
 } from '@chakra-ui/react'
 
 import { Header } from '../../components/Header'
@@ -28,7 +22,7 @@ export default function Continent(){
             <Box 
                 display="flex"
                 justifyContent="center"
-                alignItems="end"
+                alignItems={["center", "end"]}
                 height={["150px", "300px", "500px"]}
                 width="100%"
                 objectFit="cover"
@@ -38,31 +32,35 @@ export default function Continent(){
                 <Text
                     width="90%"
                     maxW="1440px"
-                    textAlign="left"
-                    lineHeight={['72px']} fontWeight="600" color="gray.50" fontSize={["48px"]}>
+                    textAlign={["center", "left"]}
+                    lineHeight={["42px", '72px']} 
+                    fontWeight="600"
+                    color="gray.50"
+                    fontSize={["28px", "48px"]}
+                >
                     Europa
                 </Text>
             </Box>
-            <Wrap my="5rem" spacing="4.5rem" width="90%" justify={["center", "center", "center","center", "space-between"]} align="center">
+            <Wrap my={["32px", "5rem"]} spacing={["16px", "4.5rem"]} width="90%" justify={["center", "center", "center","center", "space-between"]} align="center">
                 <WrapItem>
-                    <Text maxW="600px" align="justify" lineHeight={["36px"]} fontWeight="400" fontSize={["24px"]} color="gray.650">A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste</Text>
+                    <Text maxW="600px" align="justify" lineHeight={["21px", "36px"]} fontWeight="400" fontSize={["14px", "24px"]} color="gray.650">A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste</Text>
                 </WrapItem>
                 <WrapItem>
                     <Center >
                         <HStack spacing="2.75rem">
                             <InfoHighlight number={50} label="países"/>
                             <InfoHighlight number={60} label="linguas"/>
-                            <InfoHighlight number={27} label="cidades + 100"/>
+                            <InfoHighlight number={27} label="cidades +100" info={{label:"Alguma coisa"}}/>
                         </HStack>
                     </Center>
                 </WrapItem>
             </Wrap>
 
-            <Box my="5rem" spacing="4.5rem" width="90%" justifyContent="space-between">
-                <Text fontWeight="500" color="gray.650" fontSize={["14px", "36px"]} lineHeight={["21px", "54px"]}>
+            <Box mb={["37px", "5rem"]} spacing="4.5rem" width="90%">
+                <Text fontWeight="500" color="gray.650" fontSize={["24px", "36px"]} lineHeight={["21px", "54px"]}>
                     Cidades +100
                 </Text>
-                <Wrap spacing={["45px"]} mt={"40px"}>
+                <Wrap spacing={["45px"]} mt={"40px"} justify={["center", "center", "center", "center","left"]}>
                     <CityCard 
                         city="Paris"
                         country="França" 
