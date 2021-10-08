@@ -15,7 +15,7 @@ export function Header({showReturnButton = false}: HeaderProps){
 
     return (
         <Flex 
-            w="80vw"
+            w={["90vw","80vw"]}
             align="center"
             justifyContent={showReturnButton ? "space-between" : 'center'}
             padding={["4", "7"]}
