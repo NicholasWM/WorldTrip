@@ -6,7 +6,7 @@ import {
   Icon,
   Flex,
 } from '@chakra-ui/react'
-import { IoIosInformationCircleOutline } from 'react-icons/io'
+import { GoPrimitiveDot } from 'react-icons/go'
 
 interface ItemListProps {
   src: string,
@@ -37,7 +37,10 @@ export function ItemList({label, src}: ItemListProps){
       )
       :
       (
-        <Text>{label}</Text>
+        <Flex align="center" justifyItems="center">
+          <Icon color="yellow.900" m={0} w="15px" h="15px" as={GoPrimitiveDot}/>
+          <Text color="gray.650" fontSize="20px" lineHeight="27px" fontWeight="500" textAlign="center">{label}</Text>
+        </Flex>
       )
     
 }
