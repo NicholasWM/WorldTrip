@@ -28,6 +28,8 @@ export function Header({showReturnButton = false}: HeaderProps){
                 />
             )}
             <Image
+                w={["81px", "184px"]}
+                h={["20px", "45.92"]}
                 objectFit="fill"
                 src='./images/logo.svg'
                 alt="Segun Adebayo"

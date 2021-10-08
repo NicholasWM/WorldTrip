@@ -1,20 +1,7 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { Header } from '../components/Header'
 import {
-  Image,
   Flex,
-  Icon,
-  Box,
-  HStack,
   Text,
-  SimpleGrid,
-  useBreakpointValue,
-  Divider,
 } from '@chakra-ui/react'
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { ItemList } from '../components/ItemList'
 
 import 'swiper/css';
 import 'swiper/css/navigation';

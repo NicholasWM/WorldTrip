@@ -3,7 +3,10 @@ import {
   Text,
   Stack,
   useBreakpointValue,
+  Icon,
+  Flex,
 } from '@chakra-ui/react'
+import { IoIosInformationCircleOutline } from 'react-icons/io'
 
 interface ItemListProps {
   src: string,
@@ -27,7 +30,9 @@ export function ItemList({label, src}: ItemListProps){
           lineHeight={["36px"]}
           color="gray.650"
           fontWeight="600"
-        >{label}</Text>
+        >
+          {label}
+        </Text>
       </Stack>
       )
       :

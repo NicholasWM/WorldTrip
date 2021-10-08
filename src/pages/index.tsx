@@ -4,23 +4,22 @@ import { Header } from '../components/Header'
 import {
   Image,
   Flex,
-  Icon,
   Box,
-  HStack,
   Text,
-  SimpleGrid,
   useBreakpointValue,
+  Icon,
   Divider,
 } from '@chakra-ui/react'
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ItemList } from '../components/ItemList'
+import { SliderItem } from '../components/SliderItem';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { SliderItem } from '../components/SliderItem';
+import { IoIosInformationCircleOutline } from 'react-icons/io';
 const Home: NextPage = () => {
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -79,7 +78,6 @@ const Home: NextPage = () => {
           />
         )}
       </Flex>
-
 
       <Flex mx="140px" my={['90px']}  width="80%" flexDir="row" justifyContent="space-between">
         <ItemList src="./images/cocktail.svg" label="vida noturna"/>
