@@ -1,5 +1,5 @@
 import type { AppProps } from 'next/app'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, Flex } from '@chakra-ui/react'
 import { theme } from '../styles/theme'
 import '../styles/swiper.css'
 // import '../styles/global.css'
@@ -7,7 +7,9 @@ import '../styles/swiper.css'
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Component {...pageProps} />
+      <Flex flexDir="column" justifyContent="center" alignItems="center" maxW="1440px">
+        <Component {...pageProps} />
+      </Flex>
     </ChakraProvider>
   )
 }

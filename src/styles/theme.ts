@@ -24,6 +24,11 @@ export const theme = extendTheme({
             "50": "rgba(255, 186, 8, 0.5)",
         },
     },
+    textStyles:{
+        'card': {
+            fontFamily:"Barlow, sans-serif",
+        }
+    },
     fonts:{
         heading: 'Poppins, sans-serif',
         body: 'Poppins, sans-serif',
