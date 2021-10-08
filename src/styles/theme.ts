@@ -3,7 +3,7 @@ import {extendTheme, Theme} from '@chakra-ui/react'
 export const theme = extendTheme({
     config: {
         initialColorMode: "light",
-      useSystemColorMode: false,
+        useSystemColorMode: false,
     },
     colors: {
         gray:{
@@ -25,16 +25,29 @@ export const theme = extendTheme({
         },
     },
     fonts:{
-        heading: 'Poppins',
-        body: 'Poppins',
+        heading: 'Poppins, sans-serif',
+        body: 'Poppins, sans-serif',
     },
     styles:{
         global:{
             body:{
                 bg: 'gray.50',
                 color:'gray.650',
-                maxWidth: "1440px"
-            }
+                maxWidth: "1440px",
+                margin: "0 auto"
+            },
+            ".swiper-button-next, .swiper-button-prev ":{
+                color:"yellow.900",
+            },
+            ".swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet":{
+                background:"#999999",
+                opacity: 1,
+                height:"16px",
+                width:"16px",
+            },
+            ".swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet-active":{
+                background:"yellow.900",
+            },
         }
     }
 })

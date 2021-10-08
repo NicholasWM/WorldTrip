@@ -3,7 +3,6 @@ import {
     Flex,
     Icon,
     Box,
-    useBreakpointValue
 } from '@chakra-ui/react'
 
 import {IoIosArrowBack} from 'react-icons/io'
@@ -16,11 +15,10 @@ export function Header({showReturnButton = false}: HeaderProps){
 
     return (
         <Flex 
-            margin="0 auto"
-            w="90%"
+            w="80vw"
             align="center"
             justifyContent={showReturnButton ? "space-between" : 'center'}
-            p={["4", "7"]}
+            padding={["4", "7"]}
         >
             {showReturnButton && (
                 <Icon
