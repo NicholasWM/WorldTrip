@@ -20,6 +20,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { SliderItem } from '../components/SliderItem';
 const Home: NextPage = () => {
   const isWideVersion = useBreakpointValue({
     base: false,
@@ -27,12 +28,7 @@ const Home: NextPage = () => {
     md: true
   })
   return (
-    <Flex 
-      flexDir="column"
-      justifyContent="center"
-      alignItems="center"
-      maxW="1440px"
-    >
+    <>
       <Head>
         <title>Home</title>
       </Head>
@@ -85,7 +81,7 @@ const Home: NextPage = () => {
       </Flex>
 
 
-      <Flex mx="140px" my={['90px']}  width="90%" flexDir="row" justifyContent="space-between">
+      <Flex mx="140px" my={['90px']}  width="80%" flexDir="row" justifyContent="space-between">
         <ItemList src="./images/cocktail.svg" label="vida noturna"/>
         <ItemList src="./images/surf.svg" label="praia"/>
         <ItemList src="./images/building.svg" label="moderno"/>
@@ -118,7 +114,6 @@ const Home: NextPage = () => {
         mb={["24px", "64px"]}
       >
         <Swiper
-        // install Swiper modules
           modules={[Navigation, Pagination, Scrollbar, A11y]}
           spaceBetween={50}
           slidesPerView={1}
@@ -128,27 +123,51 @@ const Home: NextPage = () => {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
-          <SwiperSlide >
-            <Flex
-              w="100vw" 
-              h={"450px"} 
-              maxH="450px" 
-              flexDir="column"
-              objectFit="cover"
-              backgroundImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
-              alignItems="center"
-              justifyContent="center"
-            >
-              <Text color="gray.50" lineHeight={['72px']} fontSize={["48px"]} fontWeight="700">Europa</Text>
-              <Text color="gray.100" lineHeight={['24px']} fontSize={["24px"]} fontWeight="700">O continente mais antigo.</Text>
-            </Flex>
+          <SwiperSlide>
+            <SliderItem
+              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
+              continent="Europa"
+              desc="O continente mais antigo."
+            />
           </SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
+          <SwiperSlide>
+            <SliderItem
+              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
+              continent="América do Norte"
+              desc="O continente mais antigo."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <SliderItem
+              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
+              continent="América do Sul"
+              desc="O continente mais antigo."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <SliderItem
+              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
+              continent="Ásia"
+              desc="O continente mais antigo."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <SliderItem
+              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
+              continent="África"
+              desc="O continente mais antigo."
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <SliderItem
+              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
+              continent="Oceania"
+              desc="O continente mais antigo."
+            />
+          </SwiperSlide>
         </Swiper>
       </Box>
-    </Flex>
+    </>
   )
 }
 
