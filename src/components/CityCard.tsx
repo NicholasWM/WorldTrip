@@ -21,7 +21,7 @@ export function CityCard({
 }:CityCardProps){
     return (
         <Box width={["256px"]} my={['40px']}>
-            <Image  height={["173px"]} objectFit="fill" src={city_image}/>
+            <Image  height={["173px"]} width="100%" src={city_image}/>
             <Box bg="white" borderWidth={["1px"]} borderColor={"#FFBA08"}>
                 <Flex px={["24px"]} my={["18px"]} alignItems="center" justifyContent="space-between">
                     <Box>

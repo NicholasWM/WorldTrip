@@ -3,6 +3,17 @@ import {
     Box,
     Flex,
     Icon,
+    Tooltip,
+    useBreakpointValue,
+    Popover,
+    Button,
+    PopoverTrigger,
+    Portal,
+    PopoverContent,
+    PopoverArrow,
+    PopoverHeader,
+    PopoverCloseButton,
+    PopoverBody,
 } from '@chakra-ui/react'
 
 import { IoIosInformationCircleOutline } from 'react-icons/io'
@@ -16,13 +27,22 @@ interface InfoHighlightProps{
 }
 
 export function InfoHighlight({label, number, info}:InfoHighlightProps){
+    const isSmallVersion = useBreakpointValue({
+        base: false,
+        md:true,
+        sm: true
+      })
     return (
         <Box textAlign={["left","center"]} fontWeight="600">
             <Text lineHeight={["36px", "72px"]} fontSize={["24px", "48px"]} color="yellow.900">{number}</Text>
             <Flex align="center">
                 <Text lineHeight={["30px", "36px"]} fontSize={["17px", "24px"]} color="gray.650">{label}</Text>
-                {info && (
-                    <Icon h="10px" w="10px" mx="5px" as={IoIosInformationCircleOutline}/>
+                {!!info && isSmallVersion && (
+                    <Tooltip label="Número de cidades que o Continente tem entre as +100 catalogadas">
+                        <span style={{marginLeft:"5px"}}>
+                            <Icon h="16px" w="16px" as={IoIosInformationCircleOutline}/>
+                        </span>
+                    </Tooltip>
                 )}
             </Flex>
         </Box>

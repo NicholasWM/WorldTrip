@@ -1,34 +1,93 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# WordTrip
 
-## Getting Started
+## Dados Mockados
 
-First, run the development server:
+* Dados:
+https://www.visualcapitalist.com/the-100-most-popular-city-destinations/
 
-```bash
-npm run dev
-# or
-yarn dev
+### Script no Developer Tools usado para extrair os dados da tabela
+
+```js
+    let data = [];
+    for(i=2; i < 102; i++){
+        let query = document.querySelector(`.row-${i}`);
+        data.push({
+            id: query.querySelector('.column-1').innerText,
+            name:query.querySelector('.column-2').innerText,
+            country: query.querySelector('.column-3').innerText,
+        });
+    }
+```
+Resultado: Uma Lista de 100 objetos(id, name, country).
+
+- Buscando apenas os Paises, retirando os repetidos
+```js
+    countries new Set(data.map(item => item.country))
+```
+Resultado: Uma lista de 44 strings, de 100 cidades, apenas 44 países
+
+O grande problema é que eu preciso do objeto no formato:
+```ts
+    interface CityProps{
+        id: number,
+        name: string,
+        country: string,
+    }
+    interface ContinentProps{
+        id: number,
+        cities: CityProps[] 
+    }
+```
+E o objeto que consegui não tem nenhuma referencia ao continente do país onde a cidade está.
+
+Então fui em um site para pegar uma lista de todos os paises e seus respectivos continentes, para cruzar os dados de uma estrutura de dados com a outra.
+
+* Fonte:
+https://datahub.io/JohnSnowLabs/country-and-continent-codes-list
+
+O problema é que ele disponibiliza o download de um CSV, e esse CSV é exibido como uma string gigante no navegador, copiei e colei, transformei cada linha em uma string, coloquei numa lista, fiz um map dando split e retornando uma estrutura de dados apenas com oque eu necessitava de cada string: nome do país e continente, visto que, dentro de cada string cada dado está separado por uma virgula:
+```js
+    listaDeStrings.map(item => {
+        const [continent_name, code, country_name] = item.split(',')
+        return {continent: continent_name.replace('"', ""), country:country_name.replace('"', "")}
+    })
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Agora eu tenho duas variaveis:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+* *continentCountries* -> Estrutura de dados com {continente, pais}
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+* *citieCountry* -> Estrutura de dados com {cidade, pais}
+```js
+    const citiesByContinent = {}
+    formatedData.forEach(({continent, country, name, id})=>{
+        if(!Object.keys(citiesByContinent).includes(continent)){
+            citiesByContinent[continent] = []    
+        }
+        citiesByContinent[continent].push({country, name, id})
+    })
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Pronto, estruturas de dados para o JSON-Server prontas.
+Percebi que a lista inicial de cidades seria interessante colocar tambem, visto que a tela inicial exibe o numero de cidades e tambem porque a lista está na ordem das 100+, conforme a fonte citada para utilizar pela RocketSeat.
 
-## Learn More
+Formato dos dados no JSON-Server:
+```ts
+    interface CityProps{
+        id: number,
+        name: string,
+        country: string,
+    }
+    interface ContinentProps{
+        id: number,
+        cities: CityProps[] 
+    }
+    interface DataApiProps{
+        "continents":ContinentProps[],
+        "cities":CityProps[],
+    }
+```
 
-To learn more about Next.js, take a look at the following resources:
+O interessante é depois de tudo, os ID´s batem, não a toa programar é tão massa.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Como esse projeto é para praticar, deixei o script na past raiz, em formating.js
