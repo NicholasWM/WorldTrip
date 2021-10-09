@@ -1,0 +1,456 @@
+{
+    "continents": {
+        "Asia": {
+            "id":1,
+            "cities":[
+                {"country": "China (SAR)","name": "Hong Kong","id": "1" },
+                {"country": "Thailand","name": "Bangkok","id": "2" },
+                {"country": "China (SAR)","name": "Macau","id": "4" },
+                {"country": "Singapore","name": "Singapore","id": "5" },
+                {"country": "United Arab Emirates","name": "Dubai","id": "7" },
+                {"country": "Malaysia","name": "Kuala Lumpur","id": "9" },
+                {"country": "India","name": "Delhi","id": "11" },
+                {"country": "China","name": "Shenzhen","id": "13" },
+                {"country": "India","name": "Mumbai","id": "14" },
+                {"country": "Thailand","name": "Phuket","id": "15" },
+                {"country": "Japan","name": "Tokyo","id": "17" },
+                {"country": "Thailand","name": "Pattaya","id": "18" },
+                {"country": "Taiwan, China","name": "Taipei","id": "19" },
+                {"country": "Saudi Arabia","name": "Mecca","id": "20" },
+                {"country": "China","name": "Guangzhou","id": "21" },
+                {"country": "Saudi Arabia","name": "Medina","id": "23" },
+                {"country": "South Korea","name": "Seoul","id": "24" },
+                {"country": "India","name": "Agra","id": "26" },
+                {"country": "Japan","name": "Osaka","id": "28" },
+                {"country": "China","name": "Shanghai","id": "30" },
+                {"country": "Vietnam","name": "Ho Chi Minh City","id": "31" },
+                {"country": "Indonesia","name": "Denpasar","id": "32" },
+                {"country": "India","name": "Chennai","id": "36" },
+                {"country": "Malaysia","name": "Johor Bahru","id": "38" },
+                {"country": "India","name": "Jaipur","id": "39" },
+                {"country": "Russia","name": "Moscow","id": "45" },
+                {"country": "Vietnam","name": "Ha Long","id": "48" },
+                {"country": "Saudi Arabia","name": "Riyadh","id": "49" },
+                {"country": "Vietnam","name": "Ha Noi","id": "52" },
+                {"country": "Indonesia","name": "Jakarta","id": "57" },
+                {"country": "China","name": "Beijing","id": "58" },
+                {"country": "Russia","name": "St. Petersburg","id": "59" },
+                {"country": "Israel","name": "Jerusalem","id": "61" },
+                {"country": "Saudi Arabia","name": "Dammam","id": "64" },
+                {"country": "Malaysia","name": "Penang Island","id": "65" },
+                {"country": "Japan","name": "Kyoto","id": "67" },
+                {"country": "China","name": "Zhuhai","id": "68" },
+                {"country": "Thailand","name": "Chiang Mai","id": "70" },
+                {"country": "India","name": "Kolkatta","id": "76" },
+                {"country": "Philippines","name": "Cebu","id": "77" },
+                {"country": "Israel","name": "Tel Aviv","id": "79" },
+                {"country": "China","name": "Guilin","id": "80" },
+                {"country": "Japan","name": "Chiba","id": "86" },
+                {"country": "Vietnam","name": "Da Nang","id": "90" },
+                {"country": "Indonesia","name": "Batam","id": "91" },
+                {"country": "Japan","name": "Fukuoka","id": "93" },
+                {"country": "United Arab Emirates","name": "Abu Dhabi","id": "94" },
+                {"country": "South Korea","name": "Jeju","id": "95" },
+                {"country": "Thailand","name": "Krabi","id": "99" },
+                {"country": "India","name": "Bangalore","id": "100" }
+            ]
+        },
+        "Europe":{
+            "id":2,
+            "cities":[
+                {"country": "United Kingdom","name": "London","id": "3" },
+                {"country": "France","name": "Paris","id": "6" },
+                {"country": "Turkey","name": "Istanbul","id": "10" },
+                {"country": "Turkey","name": "Antalya","id": "12" },
+                {"country": "Italy","name": "Rome","id": "16" },
+                {"country": "Czechia","name": "Prague","id": "22" },
+                {"country": "Netherlands","name": "Amsterdam","id": "25" },
+                {"country": "Spain","name": "Barcelona","id": "33" },
+                {"country": "Italy","name": "Milan","id": "35" },
+                {"country": "Austria","name": "Vienna","id": "37" },
+                {"country": "Germany","name": "Berlin","id": "41" },
+                {"country": "Greece","name": "Athens","id": "43" },
+                {"country": "Italy","name": "Venice","id": "46" },
+                {"country": "Spain","name": "Madrid","id": "47" },
+                {"country": "Ireland","name": "Dublin","id": "50" },
+                {"country": "Italy","name": "Florence","id": "51" },
+                {"country": "Germany","name": "Munich","id": "56" },
+                {"country": "Belgium","name": "Brussels","id": "60" },
+                {"country": "Hungary","name": "Budapest","id": "62" },
+                {"country": "Portugal","name": "Lisbon","id": "63" },
+                {"country": "Greece","name": "Heraklion","id": "66" },
+                {"country": "Denmark","name": "Copenhagen","id": "71" },
+                {"country": "Poland","name": "Krakow","id": "74" },
+                {"country": "Poland","name": "Warsaw","id": "83" },
+                {"country": "Turkey","name": "Mugla","id": "84" },
+                {"country": "Germany","name": "Frankfurt","id": "87" },
+                {"country": "Sweden","name": "Stockholm","id": "88" },
+                {"country": "France","name": "Nice","id": "92" },
+                {"country": "Portugal","name": "Porto","id": "96" },
+                {"country": "Greece","name": "Rhodes","id": "97" }
+            ]
+        },
+        "North America":{
+            "id":3,
+            "cities":[
+                {"country": "USA","name": "New York City","id": "8" },
+                {"country": "USA","name": "Miami","id": "27" },
+                {"country": "USA","name": "Los Angeles","id": "29" },
+                {"country": "USA","name": "Las Vegas","id": "34" },
+                {"country": "Mexico","name": "Cancun","id": "40" },
+                {"country": "USA","name": "Orlando","id": "44" },
+                {"country": "Canada","name": "Toronto","id": "53" },
+                {"country": "Canada","name": "Vancouver","id": "69" },
+                {"country": "USA","name": "San Francisco","id": "72" },
+                {"country": "USA","name": "Honolulu","id": "81" }
+            ]
+        },
+        "Africa": {
+            "id":4,
+            "cities":[
+                {"country": "Egypt","name": "Cairo","id": "42" },
+                {"country": "South Africa","name": "Johannesburg","id": "54" },
+                {"country": "Morocco","name": "Marrakech","id": "75" },
+                {"country": "Egypt","name": "Hurgada","id": "82" }
+            ]
+        },
+        "Oceania": {
+            "id":5,
+            "cities": [
+                {"country": "Australia","name": "Sydney","id": "55" },
+                {"country": "Australia","name": "Melbourne","id": "73" },
+                {"country": "New Zealand","name": "Auckland","id": "78" }
+            ]
+        },
+        "South America":{
+            "id":6,
+            "cities":[
+                {"country": "Argentina","name": "Buenos Aires City","id": "85" },
+                {"country": "Peru","name": "Lima","id": "89" },
+                {"country": "Brazil","name": "Rio de Janeiro","id": "98" }
+            ]
+        }
+      },
+    "cities":[
+        {
+          "id": "1",
+          "name": "Hong Kong",
+          "country": "China (SAR)",
+          "continent": "Asia"
+        },
+        { "id": "2", "name": "Bangkok", "country": "Thailand", "continent": "Asia" },
+        {
+          "id": "3",
+          "name": "London",
+          "country": "United Kingdom",
+          "continent": "Europe"
+        },
+        { "id": "4", "name": "Macau", "country": "China (SAR)", "continent": "Asia" },
+        {
+          "id": "5",
+          "name": "Singapore",
+          "country": "Singapore",
+          "continent": "Asia"
+        },
+        { "id": "6", "name": "Paris", "country": "France", "continent": "Europe" },
+        {
+          "id": "7",
+          "name": "Dubai",
+          "country": "United Arab Emirates",
+          "continent": "Asia"
+        },
+        {
+          "id": "8",
+          "name": "New York City",
+          "country": "USA",
+          "continent": "North America"
+        },
+        {
+          "id": "9",
+          "name": "Kuala Lumpur",
+          "country": "Malaysia",
+          "continent": "Asia"
+        },
+        {
+          "id": "10",
+          "name": "Istanbul",
+          "country": "Turkey",
+          "continent": "Europe"
+        },
+        { "id": "11", "name": "Delhi", "country": "India", "continent": "Asia" },
+        { "id": "12", "name": "Antalya", "country": "Turkey", "continent": "Europe" },
+        { "id": "13", "name": "Shenzhen", "country": "China", "continent": "Asia" },
+        { "id": "14", "name": "Mumbai", "country": "India", "continent": "Asia" },
+        { "id": "15", "name": "Phuket", "country": "Thailand", "continent": "Asia" },
+        { "id": "16", "name": "Rome", "country": "Italy", "continent": "Europe" },
+        { "id": "17", "name": "Tokyo", "country": "Japan", "continent": "Asia" },
+        { "id": "18", "name": "Pattaya", "country": "Thailand", "continent": "Asia" },
+        {
+          "id": "19",
+          "name": "Taipei",
+          "country": "Taiwan, China",
+          "continent": "Asia"
+        },
+        {
+          "id": "20",
+          "name": "Mecca",
+          "country": "Saudi Arabia",
+          "continent": "Asia"
+        },
+        { "id": "21", "name": "Guangzhou", "country": "China", "continent": "Asia" },
+        {
+          "id": "22",
+          "name": "Prague",
+          "country": "Czechia",
+          "continent": "Europe"
+        },
+        {
+          "id": "23",
+          "name": "Medina",
+          "country": "Saudi Arabia",
+          "continent": "Asia"
+        },
+        {
+          "id": "24",
+          "name": "Seoul",
+          "country": "South Korea",
+          "continent": "Asia"
+        },
+        {
+          "id": "25",
+          "name": "Amsterdam",
+          "country": "Netherlands",
+          "continent": "Europe"
+        },
+        { "id": "26", "name": "Agra", "country": "India", "continent": "Asia" },
+        { "id": "27", "name": "Miami", "country": "USA", "continent": "North America" },
+        { "id": "28", "name": "Osaka", "country": "Japan", "continent": "Asia" },
+        {
+          "id": "29",
+          "name": "Los Angeles",
+          "country": "USA",
+          "continent": "North America"
+        },
+        { "id": "30", "name": "Shanghai", "country": "China", "continent": "Asia" },
+        {
+          "id": "31",
+          "name": "Ho Chi Minh City",
+          "country": "Vietnam",
+          "continent": "Asia"
+        },
+        {
+          "id": "32",
+          "name": "Denpasar",
+          "country": "Indonesia",
+          "continent": "Asia"
+        },
+        {
+          "id": "33",
+          "name": "Barcelona",
+          "country": "Spain",
+          "continent": "Europe"
+        },
+        { "id": "34", "name": "Las Vegas", "country": "USA", "continent": "North America" },
+        { "id": "35", "name": "Milan", "country": "Italy", "continent": "Europe" },
+        { "id": "36", "name": "Chennai", "country": "India", "continent": "Asia" },
+        { "id": "37", "name": "Vienna", "country": "Austria", "continent": "Europe" },
+        {
+          "id": "38",
+          "name": "Johor Bahru",
+          "country": "Malaysia",
+          "continent": "Asia"
+        },
+        { "id": "39", "name": "Jaipur", "country": "India", "continent": "Asia" },
+        {
+          "id": "40",
+          "name": "Cancun",
+          "country": "Mexico",
+          "continent": "North America"
+        },
+        { "id": "41", "name": "Berlin", "country": "Germany", "continent": "Europe" },
+        { "id": "42", "name": "Cairo", "country": "Egypt", "continent": "Africa" },
+        { "id": "43", "name": "Athens", "country": "Greece", "continent": "Europe" },
+        { "id": "44", "name": "Orlando", "country": "USA", "continent": "North America" },
+        { "id": "45", "name": "Moscow", "country": "Russia", "continent": "Asia" },
+        { "id": "46", "name": "Venice", "country": "Italy", "continent": "Europe" },
+        { "id": "47", "name": "Madrid", "country": "Spain", "continent": "Europe" },
+        { "id": "48", "name": "Ha Long", "country": "Vietnam", "continent": "Asia" },
+        {
+          "id": "49",
+          "name": "Riyadh",
+          "country": "Saudi Arabia",
+          "continent": "Asia"
+        },
+        { "id": "50", "name": "Dublin", "country": "Ireland", "continent": "Europe" },
+        { "id": "51", "name": "Florence", "country": "Italy", "continent": "Europe" },
+        { "id": "52", "name": "Ha Noi", "country": "Vietnam", "continent": "Asia" },
+        {
+          "id": "53",
+          "name": "Toronto",
+          "country": "Canada",
+          "continent": "North America"
+        },
+        {
+          "id": "54",
+          "name": "Johannesburg",
+          "country": "South Africa",
+          "continent": "Africa"
+        },
+        {
+          "id": "55",
+          "name": "Sydney",
+          "country": "Australia",
+          "continent": "Oceania"
+        },
+        { "id": "56", "name": "Munich", "country": "Germany", "continent": "Europe" },
+        {
+          "id": "57",
+          "name": "Jakarta",
+          "country": "Indonesia",
+          "continent": "Asia"
+        },
+        { "id": "58", "name": "Beijing", "country": "China", "continent": "Asia" },
+        {
+          "id": "59",
+          "name": "St. Petersburg",
+          "country": "Russia",
+          "continent": "Asia"
+        },
+        {
+          "id": "60",
+          "name": "Brussels",
+          "country": "Belgium",
+          "continent": "Europe"
+        },
+        { "id": "61", "name": "Jerusalem", "country": "Israel", "continent": "Asia" },
+        {
+          "id": "62",
+          "name": "Budapest",
+          "country": "Hungary",
+          "continent": "Europe"
+        },
+        {
+          "id": "63",
+          "name": "Lisbon",
+          "country": "Portugal",
+          "continent": "Europe"
+        },
+        {
+          "id": "64",
+          "name": "Dammam",
+          "country": "Saudi Arabia",
+          "continent": "Asia"
+        },
+        {
+          "id": "65",
+          "name": "Penang Island",
+          "country": "Malaysia",
+          "continent": "Asia"
+        },
+        {
+          "id": "66",
+          "name": "Heraklion",
+          "country": "Greece",
+          "continent": "Europe"
+        },
+        { "id": "67", "name": "Kyoto", "country": "Japan", "continent": "Asia" },
+        { "id": "68", "name": "Zhuhai", "country": "China", "continent": "Asia" },
+        {
+          "id": "69",
+          "name": "Vancouver",
+          "country": "Canada",
+          "continent": "North America"
+        },
+        {
+          "id": "70",
+          "name": "Chiang Mai",
+          "country": "Thailand",
+          "continent": "Asia"
+        },
+        {
+          "id": "71",
+          "name": "Copenhagen",
+          "country": "Denmark",
+          "continent": "Europe"
+        },
+        {
+          "id": "72",
+          "name": "San Francisco",
+          "country": "USA",
+          "continent": "North America"
+        },
+        {
+          "id": "73",
+          "name": "Melbourne",
+          "country": "Australia",
+          "continent": "Oceania"
+        },
+        { "id": "74", "name": "Krakow", "country": "Poland", "continent": "Europe" },
+        {
+          "id": "75",
+          "name": "Marrakech",
+          "country": "Morocco",
+          "continent": "Africa"
+        },
+        { "id": "76", "name": "Kolkatta", "country": "India", "continent": "Asia" },
+        { "id": "77", "name": "Cebu", "country": "Philippines", "continent": "Asia" },
+        {
+          "id": "78",
+          "name": "Auckland",
+          "country": "New Zealand",
+          "continent": "Oceania"
+        },
+        { "id": "79", "name": "Tel Aviv", "country": "Israel", "continent": "Asia" },
+        { "id": "80", "name": "Guilin", "country": "China", "continent": "Asia" },
+        { "id": "81", "name": "Honolulu", "country": "USA", "continent": "North America" },
+        { "id": "82", "name": "Hurgada", "country": "Egypt", "continent": "Africa" },
+        { "id": "83", "name": "Warsaw", "country": "Poland", "continent": "Europe" },
+        { "id": "84", "name": "Mugla", "country": "Turkey", "continent": "Europe" },
+        {
+          "id": "85",
+          "name": "Buenos Aires City",
+          "country": "Argentina",
+          "continent": "South America"
+        },
+        { "id": "86", "name": "Chiba", "country": "Japan", "continent": "Asia" },
+        {
+          "id": "87",
+          "name": "Frankfurt",
+          "country": "Germany",
+          "continent": "Europe"
+        },
+        {
+          "id": "88",
+          "name": "Stockholm",
+          "country": "Sweden",
+          "continent": "Europe"
+        },
+        {
+          "id": "89",
+          "name": "Lima",
+          "country": "Peru",
+          "continent": "South America"
+        },
+        { "id": "90", "name": "Da Nang", "country": "Vietnam", "continent": "Asia" },
+        { "id": "91", "name": "Batam", "country": "Indonesia", "continent": "Asia" },
+        { "id": "92", "name": "Nice", "country": "France", "continent": "Europe" },
+        { "id": "93", "name": "Fukuoka", "country": "Japan", "continent": "Asia" },
+        {
+          "id": "94",
+          "name": "Abu Dhabi",
+          "country": "United Arab Emirates",
+          "continent": "Asia"
+        },
+        { "id": "95", "name": "Jeju", "country": "South Korea", "continent": "Asia" },
+        { "id": "96", "name": "Porto", "country": "Portugal", "continent": "Europe" },
+        { "id": "97", "name": "Rhodes", "country": "Greece", "continent": "Europe" },
+        {
+          "id": "98",
+          "name": "Rio de Janeiro",
+          "country": "Brazil",
+          "continent": "South America"
+        },
+        { "id": "99", "name": "Krabi", "country": "Thailand", "continent": "Asia" },
+        { "id": "100", "name": "Bangalore", "country": "India", "continent": "Asia" }
+      ]
+}
