@@ -1,4 +1,4 @@
-import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
+import type { GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { Header } from '../components/Header'
 import {
@@ -7,7 +7,6 @@ import {
   Box,
   Text,
   useBreakpointValue,
-  Icon,
   Divider,
   Wrap
 } from '@chakra-ui/react'
@@ -139,8 +138,6 @@ const Home: NextPage<HomeProps> = ({continents}) => {
           navigation
           pagination={{ clickable: true }}
           scrollbar={{ draggable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log('slide change')}
         >
           {continents?.map(({id, name, image, subtitle}, index)=>(
             <SwiperSlide key={`${id}${index}`}>
@@ -161,9 +158,7 @@ const Home: NextPage<HomeProps> = ({continents}) => {
 export default Home
 
 
-export const getStaticProps: GetStaticProps = async ({
-  params
-}) => {
+export const getStaticProps: GetStaticProps = async () => {
   const {data: continents} = await api.get<Continent[]>('continents')
   return {
     props:{
