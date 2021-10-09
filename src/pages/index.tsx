@@ -91,7 +91,7 @@ const Home: NextPage = () => {
         <ItemList src="./images/surf.svg" label="praia"/>
         <ItemList src="./images/building.svg" label="moderno"/>
         <ItemList src="./images/museum.svg" label="clássico"/>
-        <ItemList src="./images/earth.svg" label="e mais ..."/>
+        <ItemList  src="./images/earth.svg" label="e mais ..."/>
       </Wrap>
 
       <Divider w={['90px']} orientation="horizontal" />
