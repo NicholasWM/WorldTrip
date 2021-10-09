@@ -1,4 +1,4 @@
-import type { NextPage } from 'next'
+import type { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { Header } from '../components/Header'
 import {
@@ -20,13 +20,27 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import { IoIosInformationCircleOutline } from 'react-icons/io';
-const Home: NextPage = () => {
+import { api } from '../services/api';
+
+type Continent = {
+  id:string;
+  name:string;
+  subtitle:string;
+  image:string;
+  info:string;
+}
+
+interface HomeProps {
+  continents: Continent[]
+}
+
+const Home: NextPage<HomeProps> = ({continents}) => {
   const isWideVersion = useBreakpointValue({
     base: false,
 
     md: true
   })
+  
   return (
     <>
       <Head>
@@ -128,48 +142,16 @@ const Home: NextPage = () => {
           onSwiper={(swiper) => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
-          <SwiperSlide>
-            <SliderItem
-              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
-              continent="Europa"
-              desc="O continente mais antigo."
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderItem
-              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
-              continent="América do Norte"
-              desc="O continente mais antigo."
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderItem
-              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
-              continent="América do Sul"
-              desc="O continente mais antigo."
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderItem
-              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
-              continent="Ásia"
-              desc="O continente mais antigo."
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderItem
-              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
-              continent="África"
-              desc="O continente mais antigo."
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <SliderItem
-              bgImage="https://images.unsplash.com/photo-1473951574080-01fe45ec8643?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1504&q=80"
-              continent="Oceania"
-              desc="O continente mais antigo."
-            />
-          </SwiperSlide>
+          {continents?.map(({id, name, image, subtitle}, index)=>(
+            <SwiperSlide key={`${id}${index}`}>
+              <SliderItem
+                id={id}
+                bgImage={image}
+                continent={name}
+                desc={subtitle}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </Box>
     </>
@@ -177,3 +159,15 @@ const Home: NextPage = () => {
 }
 
 export default Home
+
+
+export const getStaticProps: GetStaticProps = async ({
+  params
+}) => {
+  const {data: continents} = await api.get<Continent[]>('continents')
+  return {
+    props:{
+      continents
+    }
+  }
+} 

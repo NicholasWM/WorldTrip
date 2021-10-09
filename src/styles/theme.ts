@@ -40,6 +40,16 @@ export const theme = extendTheme({
                 color:'gray.650',
                 maxWidth: "1440px",
                 margin: "0 auto"
+                
+            },
+            ".slideTitle":{
+                color:"gray.50",
+            },
+            ".slideTitle::hover":{
+                color:'yellow.900'
+            },
+            ".slideSubtitle":{
+                color:"gray.100"
             },
             ".swiper-button-next, .swiper-button-prev ":{
                 color:"yellow.900",
