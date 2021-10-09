@@ -4,16 +4,6 @@ import {
     Flex,
     Icon,
     Tooltip,
-    useBreakpointValue,
-    Popover,
-    Button,
-    PopoverTrigger,
-    Portal,
-    PopoverContent,
-    PopoverArrow,
-    PopoverHeader,
-    PopoverCloseButton,
-    PopoverBody,
 } from '@chakra-ui/react'
 
 import { IoIosInformationCircleOutline } from 'react-icons/io'

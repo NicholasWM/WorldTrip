@@ -54,8 +54,6 @@ export default function Continent({
     continent,
     count
 }: ContinentProps){
-    console.log(cities,continent, count);
-    
     return (
         <>
             <Head>
@@ -127,8 +125,6 @@ export const getStaticPaths:GetStaticPaths = async () => {
 
 };
 
-
-
 export const getStaticProps: GetStaticProps = async ({params})=>{
     const {data: continent} = await api.get(`/continents/${params?.slug}`)
     
@@ -137,7 +133,6 @@ export const getStaticProps: GetStaticProps = async ({params})=>{
     let countryIds =  await Promise.all([...new Set(cities.map(({country})=> country.id))]
         .map(async id => (await api.get<Country>(`country/${id}`)).data))
     let citiesWCountry = cities.map((city) => ({...city, country: countryIds.find(({id}) => id === city.country.id)}))
-    console.log(continent,cities);
     
     return {
         props:{
