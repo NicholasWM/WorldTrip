@@ -68,8 +68,7 @@ export default function Continent({
                 alignItems={["center", "end"]}
                 height={["150px", "300px", "500px"]}
                 width="100%"
-                objectFit="cover"
-                objectPosition="center"
+                backgroundSize="cover"
                 backgroundImage={continent.image}
             >
                 <Text
