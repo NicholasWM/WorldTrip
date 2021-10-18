@@ -54,13 +54,11 @@ Desafio desenvolvido durante o Ignite da RocketSeat
 
 ## Home
 <hr />
-
 <br />
 
 <img src="./docs/Home.gif">
 <img src="./docs/Home_Responsible.gif?raw=true">
 
-<br />
 <br />
 <hr />
 
@@ -76,10 +74,6 @@ Desafio desenvolvido durante o Ignite da RocketSeat
 <hr />
 <!-- <h3 align="center">Você pode acessar o projeto <a href="#" target="_blank">clicando aqui</a></h3>
 <hr /> -->
-
-<br />
-<br />
-
 
 ## Guide
 <hr />
@@ -114,14 +108,17 @@ $ yarn server
 ```
 $ yarn dev
 ```
+
+<br />
+
 ---
-<br />
-<br />
+
 
 # Extras
 
-## Extracting Mocked Data
 ---
+
+## Extracting Mocked Data
 ### *Data Source:*
 https://www.visualcapitalist.com/the-100-most-popular-city-destinations/
 
