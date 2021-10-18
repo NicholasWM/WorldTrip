@@ -57,10 +57,9 @@ Desafio desenvolvido durante o Ignite da RocketSeat
 
 <br />
 
-![Home Page](/docs/home.gif)
+<img src="./docs/home.gif?raw=true">
+<img src="./docs/home_responsible.gif?raw=true">
 
-
-![Home Page Responsiveness](/docs/home_responsible.gif)
 <br />
 <br />
 <hr />
@@ -70,8 +69,9 @@ Desafio desenvolvido durante o Ignite da RocketSeat
 <hr />
 <br />
 
-![Continent Page](/docs/continent.gif)
-![Continent Page Responsiveness](/docs/continent_responsible.gif)
+<img src="./docs/continent.gif?raw=true">
+<img src="./docs/continent_responsible.gif?raw=true">
+
 <br />
 <hr />
 <!-- <h3 align="center">Você pode acessar o projeto <a href="#" target="_blank">clicando aqui</a></h3>
