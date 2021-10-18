@@ -1,11 +1,133 @@
 # WordTrip
+Desafio desenvolvido durante o Ignite da RocketSeat
 
-## Dados Mockados
+<br />
 
-* Dados:
+[***1. Guide***](#guide)
+--------------------------------
+
+> [Guide](#guide) <br />
+> [Installation](#Installation) <br />
+> [Clone this repository](#Clone-this-repository) <br />
+> [Move into the directory](#Move-into-the-directory) <br />
+> [Install dependencies](#Install-dependencies) <br />
+> [Run JSON Server](#Run-JSON-Server) <br />
+> [Run WordTrip Web App](#Run-WordTrip-Web-App) <br />
+
+<br />
+
+[***2. Project View***](#project-view)
+--------------------------------
+
+> [Home](#home) <br />
+> [Continent](#continent) <br />
+
+<br />
+
+
+[***3. Technologies(External links)***](#)
+--------------------------------
+
+> [React](https://github.com/facebook/react/) <br />
+> [Typescript](https://github.com/microsoft/TypeScript) <br />
+> [Next](https://nextjs.org/docs/getting-started) <br />
+> [Swiper](https://swiperjs.com/get-started) <br />
+> [Axios](https://github.com/axios/axios) <br />
+> [Chakra UI](https://chakra-ui.com/docs/getting-started) <br />
+> [React Icons](https://react-icons.github.io/react-icons/) <br />
+> [JSON Server](https://github.com/typicode/json-server) <br />
+
+
+<br />
+
+[***4. Extras***](#extras)
+--------------------------------
+
+> [Extracting Mocked Data](#Extracting-Mocked-Data) <br />
+
+<br />
+
+<br />
+<hr />
+
+# Project View
+
+## Home
+<hr />
+
+<br />
+
+![Home Page](/docs/home.gif)
+
+
+![Home Page Responsiveness](/docs/home_responsible.gif)
+<br />
+<br />
+<hr />
+
+
+## Continent
+<hr />
+<br />
+
+![Continent Page](/docs/continent.gif)
+![Continent Page Responsiveness](/docs/continent_responsible.gif)
+<br />
+<hr />
+<!-- <h3 align="center">Você pode acessar o projeto <a href="#" target="_blank">clicando aqui</a></h3>
+<hr /> -->
+
+<br />
+<br />
+
+
+## Guide
+<hr />
+
+### Clone this repository
+```
+$ git clone https://github.com/NicholasWM/WorldTrip.git
+```
+
+### Move into the directory
+```
+$ cd WorldTrip
+```
+
+### Install dependencies
+
+```
+# Install with Yarn
+$ yarn
+
+# Install with NPM
+$ npm i
+```
+
+### Run JSON Server
+```
+# Inicializando JSON SERVER com os dados mockados
+$ yarn server
+```
+
+### Run WordTrip Web App
+```
+$ yarn dev
+```
+---
+<br />
+<br />
+
+# Extras
+
+## Extracting Mocked Data
+---
+### *Data Source:*
 https://www.visualcapitalist.com/the-100-most-popular-city-destinations/
 
-### Script no Developer Tools usado para extrair os dados da tabela
+---
+
+### Script made in the Developer Tools to extract data from Table
 
 ```js
     let data = [];
@@ -18,15 +140,18 @@ https://www.visualcapitalist.com/the-100-most-popular-city-destinations/
         });
     }
 ```
-Resultado: Uma Lista de 100 objetos(id, name, country).
+#### this script returns a list of 100 objects (id, name, country).
+---
 
-- Buscando apenas os Paises, retirando os repetidos
+### Searching only the countries, removing the repeated
+
 ```js
     countries new Set(data.map(item => item.country))
 ```
-Resultado: Uma lista de 44 strings, de 100 cidades, apenas 44 países
 
-O grande problema é que eu preciso do objeto no formato:
+#### This script returns a list of 44 strings, 100 cities and 44 countries
+---
+#### The big problem is that I need the object in this format:
 ```ts
     interface CityProps{
         id: number,
@@ -38,26 +163,30 @@ O grande problema é que eu preciso do objeto no formato:
         cities: CityProps[] 
     }
 ```
-E o objeto que consegui não tem nenhuma referencia ao continente do país onde a cidade está.
 
-Então fui em um site para pegar uma lista de todos os paises e seus respectivos continentes, para cruzar os dados de uma estrutura de dados com a outra.
+And the object I got has no reference to the continent of the country where the city is.
 
-* Fonte:
+So I went to a website to get a list of all countries and their respective continents, to cross-check data from one data structure with another.
+
+## Source:
+
 https://datahub.io/JohnSnowLabs/country-and-continent-codes-list
 
-O problema é que ele disponibiliza o download de um CSV, e esse CSV é exibido como uma string gigante no navegador, copiei e colei, transformei cada linha em uma string, coloquei numa lista, fiz um map dando split e retornando uma estrutura de dados apenas com oque eu necessitava de cada string: nome do país e continente, visto que, dentro de cada string cada dado está separado por uma virgula:
+---
+
+The problem is that it makes downloading a CSV available, and that CSV is displayed as a giant string in the browser, I copied and pasted, turned each line into a string, put it in a list, made a map by splitting and returning a data structure just what I needed for each string: name of the country and continent, since within each string each data is separated by a comma:
 ```js
-    listaDeStrings.map(item => {
+    stringList.map(item => {
         const [continent_name, code, country_name] = item.split(',')
         return {continent: continent_name.replace('"', ""), country:country_name.replace('"', "")}
     })
 ```
+---
+Now I have two variables:
 
-Agora eu tenho duas variaveis:
+* *continentCountries* -> Data structure with {continent, country}
 
-* *continentCountries* -> Estrutura de dados com {continente, pais}
-
-* *citieCountry* -> Estrutura de dados com {cidade, pais}
+* *citieCountry* -> Data structure with {city, country}
 ```js
     const citiesByContinent = {}
     formatedData.forEach(({continent, country, name, id})=>{
@@ -67,11 +196,13 @@ Agora eu tenho duas variaveis:
         citiesByContinent[continent].push({country, name, id})
     })
 ```
+---
+Ready, data structures for the JSON-Server ready.
+I realized that the initial list of cities would be interesting to place as well, since the initial screen displays the number of cities and also because the list is in the order of 100+, according to the source cited for use by RocketSeat.
 
-Pronto, estruturas de dados para o JSON-Server prontas.
-Percebi que a lista inicial de cidades seria interessante colocar tambem, visto que a tela inicial exibe o numero de cidades e tambem porque a lista está na ordem das 100+, conforme a fonte citada para utilizar pela RocketSeat.
+---
+## Data format in JSON-Server:
 
-Formato dos dados no JSON-Server:
 ```ts
     interface CityProps{
         id: number,
@@ -88,6 +219,5 @@ Formato dos dados no JSON-Server:
     }
 ```
 
-O interessante é depois de tudo, os ID´s batem, não a toa programar é tão massa.
 
-Como esse projeto é para praticar, deixei o script na past raiz, em formating.js
+The interesting thing is after all, the ID's match, not for nothing programming is so awesome.
